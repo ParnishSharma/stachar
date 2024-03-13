@@ -14,10 +14,10 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item"  style={{ marginRight: "15px" }}>
-                <Link className="nav-link active" aria-current="page" to="/" style={{ color: "white" }}>Home</Link>
+                <Link className="nav-link active" aria-current="page" to="/home" style={{ color: "white" }}>Home</Link>
               </li>
               <li className="nav-item" style={{ marginRight: "15px" }}> 
-                <Link className="nav-link" to="/fields" style={{ color: "white" }}>Fields</Link>
+                <Link className="nav-link" to="/scan" style={{ color: "white" }}>Scan</Link>
               </li>
               <li className="nav-item" style={{ marginRight: "15px" }}> 
               <Link className="nav-link" to="/collab" style={{ color: "white" }}>Profile</Link>
