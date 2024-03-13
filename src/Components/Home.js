@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 import i18n from 'i18next';
 import React, { useState } from 'react';
 import { initReactI18next, useTranslation } from 'react-i18next';
-import { FaFileAlt, FaMapMarkerAlt, FaRegIdCard } from 'react-icons/fa';
-// Translation data
-// Translation data
+import { FaArrowRight, FaFileAlt, FaMapMarkerAlt, FaRegIdCard } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const resources = {
     en: {
       translation: {
@@ -205,6 +204,9 @@ const resources = {
           {t('documentsNeeded.description')}
         </p>
       </motion.div>
+      <Link to="/form">      <button style={styles.button}>
+        Continue <FaArrowRight style={styles.arrowIcon} />
+      </button></Link>  
     </div>
   );
 };
