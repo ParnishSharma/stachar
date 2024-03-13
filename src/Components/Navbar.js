@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import '../css/Navbar.css';
 
 function Navbar() {
   return (
     <div className='navbar-head'>
       <nav className="navbar navbar-expand-lg navbar-light ">
         <div className="container-fluid">
-        <Link className="navbar-brand" to="/home" style={{ color: "#D1F8F3", fontSize: "2.5rem", fontFamily: "Futura", animation: "continuous-animation 4s infinite alternate" }}>COLLANGO</Link>
+        <Link className="navbar-brand" to="/home" style={{ color: "#D1F8F3", fontSize: "2.5rem", fontFamily: "Futura", animation: "continuous-animation 4s infinite alternate" }}>STACHAR</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -20,7 +20,7 @@ function Navbar() {
                 <Link className="nav-link" to="/fields" style={{ color: "white" }}>Fields</Link>
               </li>
               <li className="nav-item" style={{ marginRight: "15px" }}> 
-              <Link className="nav-link" to="/collab" style={{ color: "white" }}>Collabs</Link>
+              <Link className="nav-link" to="/collab" style={{ color: "white" }}>Profile</Link>
             </li>
 
               <li className="nav-item" >

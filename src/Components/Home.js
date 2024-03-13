@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './FaceScanComponent.css'; // Import CSS file for styling
+import '../css/FaceScanComponent.css'; // Import CSS file for styling
 
 const FaceScanComponent = () => {
   const [isAligned, setIsAligned] = useState(false);
