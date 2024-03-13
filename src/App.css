@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .App {
   text-align: center;
 }
@@ -36,3 +37,9 @@
     transform: rotate(360deg);
   }
 }
+=======
+
+*{
+  background-color: #000080;
+}
+>>>>>>> 5542d4bb3dec233764788825746cc26fa07c9b23
