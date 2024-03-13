@@ -1,0 +1,63 @@
+/* FaceScanComponent.css */
+
+.face-scan-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.video-preview {
+  width: 100%;
+  height: auto;
+}
+
+.photo-preview {
+  width: 100%;
+  max-height: 300px;
+}
+
+.face-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px dashed white;
+}
+
+.status-message {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.capture-button,
+.retake-button,
+.upload-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.capture-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.retake-button,
+.upload-button {
+  background-color: #6c757d;
+}

@@ -1,0 +1,26 @@
+* {
+    color: aliceblue;
+}
+
+.navbar-head {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.navbar-nav .nav-link {
+    transition: color 10s ease-in-out; /* Smooth transition for color change */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00; /* Change text color on hover */
+    font-size: 23px;
+}
+
+.nav-item {
+    display: flex; /* Add flex display */
+    justify-content: space-between;
+    align-items: center; 
+    
+}
