@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../css/FaceScanComponent.css'; // Import CSS file for styling
 
-const FaceScanComponent = () => {
+const Scancard = () => {
   const [isAligned, setIsAligned] = useState(false);
   const [countdown, setCountdown] = useState(3);
   const [photoData, setPhotoData] = useState(null);
@@ -104,7 +104,7 @@ const FaceScanComponent = () => {
 
   return (
     <div className="face-scan-container">
-      <h2>Face Scan</h2>
+      <h2>Card Scan</h2>
       <div className="video-container">
         {!displayPhoto ? (
           <video
@@ -168,11 +168,11 @@ const FaceScanComponent = () => {
           )}
         </div>
       )}
-      <Link to="/scancard">      <button >
+      <Link to="/end">      <button style={{marginTop:"20px", padding:"4px", borderRadius:"3px"}} >
       Continue <FaArrowRight  />
     </button></Link>  
     </div>
   );
 };
 
-export default FaceScanComponent;
+export default Scancard;
