@@ -1,5 +1,10 @@
 # STACHAR - An e-KYC app
 
+
+WORKING VIDEO LINK :  https://drive.google.com/file/d/1tvx79CHDZW_ZyS8fK_4jeUVbXYFzGbRd/view?usp=sharing
+
+
+
 Welcome to STACHAR, your one-stop solution for e-KYC (electronic Know Your Customer) needs. STACHAR is a user-friendly application designed to streamline the process of customer verification for businesses and organizations.
 
 ## Workflow 
@@ -19,15 +24,21 @@ Welcome to STACHAR, your one-stop solution for e-KYC (electronic Know Your Custo
 
 ## Screenshots
 * Landing
-  [ Insert Pic Here ]
+  ![WhatsApp Image 2024-03-14 at 18 42 01](https://github.com/ParnishSharma/stachar/assets/100596002/d7327689-99f8-4e27-ad7a-5e1332856bde)
+
 * Home Page
-  [ Insert Pic Here ]
+ ![WhatsApp Image 2024-03-14 at 18 42 01 (1)](https://github.com/ParnishSharma/stachar/assets/100596002/5ccc84de-612a-436d-a19a-c0d91b14d535)
+
   Showing the feature of changing languages as needed
 * Registration Form
-  [ Insert Pic Here ]
+![WhatsApp Image 2024-03-14 at 18 42 01 (2)](https://github.com/ParnishSharma/stachar/assets/100596002/837a4e83-4903-4b2c-8c0f-f0e265083fb4)
+
 * Face Scan
-  [ Insert Pic Here ]
+  ![WhatsApp Image 2024-03-14 at 18 42 02](https://github.com/ParnishSharma/stachar/assets/100596002/74cc918c-a5e9-4d56-a148-2c0261f60dc1)
+
 * Card Scan
-  [ Insert Pic Here ]
+ ![WhatsApp Image 2024-03-14 at 18 42 02 (1)](https://github.com/ParnishSharma/stachar/assets/100596002/3402d7d3-fadc-41b5-a6ab-913a5d708581)
+
 * End
-* [ Insert Pic Here ]
+* `    ![WhatsApp Image 2024-03-14 at 18 42 02 (2)](https://github.com/ParnishSharma/stachar/assets/100596002/64119e15-85ab-4dc9-b0a9-caf04b1af66b)
+
