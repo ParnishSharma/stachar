@@ -34,6 +34,7 @@ function PersonalInfo() {
   return (
     <div className="form-container">
       <div className="form-wrapper">
+      <h2 style={{fontFamily:'sans-serif', textAlign:'center', textDecoration:'underline', marginBottom:'12px'}}>Kindly Fill Your Details</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <label htmlFor="name">Name:</label>
