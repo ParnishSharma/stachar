@@ -32,17 +32,9 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-<<<<<<< HEAD
-              <li className="nav-item"  style={{ marginRight: "15px" }}>
-                <Link className="nav-link active" aria-current="page" to="/" style={{ color: "white" }}>Home</Link>
-              </li>
-              <li className="nav-item" style={{ marginRight: "15px" }}> 
-                <Link className="nav-link" to="/fields" style={{ color: "white" }}>Fields</Link>
-                <Link className="nav-link active" aria-current="page" to="/home" style={{ color: "white" }}>Home</Link>
-              </li>
-              <li className="nav-item" style={{ marginRight: "15px" }}> 
-                <Link className="nav-link" to="/scan" style={{ color: "white" }}>Scan</Link>
-=======
+            
+              
+             
               <li className="nav-item" style={{ marginRight: "15px" }}>
                 <Link
                   className="nav-link active"
@@ -79,7 +71,6 @@ function Navbar() {
                 >
                   UploadDocs
                 </Link>
->>>>>>> 5fd33205559d96c04ac69eb54a2905abc2f77911
               </li>
 
               <li className="nav-item">

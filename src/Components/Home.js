@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import { motion } from 'framer-motion';
 import i18n from 'i18next';
@@ -6,20 +5,9 @@ import React, { useState } from 'react';
 import { initReactI18next, useTranslation } from 'react-i18next';
 import { FaArrowRight, FaFileAlt, FaMapMarkerAlt, FaRegIdCard } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-=======
-import { motion } from "framer-motion";
-import i18n from "i18next";
-import React, { useState } from "react";
-import { initReactI18next, useTranslation } from "react-i18next";
-import {
-  FaArrowRight,
-  FaFileAlt,
-  FaMapMarkerAlt,
-  FaRegIdCard,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
 
->>>>>>> 5fd33205559d96c04ac69eb54a2905abc2f77911
+
+
 const resources = {
   en: {
     translation: {
@@ -196,7 +184,10 @@ const Home = () => {
 
   return (
     <div style={styles.container}>
-      <h4 style={{ marginRight: "0" }}>select language </h4>
+      <div style={{right:'0'}}>
+
+      <h4 style={{ marginRight: "0" }}>Select Language </h4>
+      </div>
       <select value={selectedLanguage} onChange={handleLanguageChange}>
         <h4>slect language </h4>
         <option value="en">English</option>
@@ -243,15 +234,9 @@ const Home = () => {
         </h2>
         <p style={styles.description}>{t("documentsNeeded.description")}</p>
       </motion.div>
-<<<<<<< HEAD
-      <Link to="/form">      <button style={styles.button}>
-        Continue <FaArrowRight style={styles.arrowIcon} />
-      </button></Link>  
-=======
       <Link to="/form">
         <button style={styles.button}>Continue</button>
       </Link>
->>>>>>> 5fd33205559d96c04ac69eb54a2905abc2f77911
     </div>
   );
 };

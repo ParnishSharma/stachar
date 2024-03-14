@@ -34,14 +34,14 @@ import bodyParser from 'body-parser';
 // const app = express();
 
 
-// Set up Multer storage configuration
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'C:/Users/ayush/Downloads/stachar-main/Uploads');
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+    // Change the file extension to '.jpg'
+    cb(null, file.fieldname + '-' + uniqueSuffix + '.jpg');
   }
 });
 

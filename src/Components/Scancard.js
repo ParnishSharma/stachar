@@ -1,10 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../css/Scancard.css"; // Import CSS file
-<<<<<<< HEAD
 import axios from "axios";
-=======
->>>>>>> 5fd33205559d96c04ac69eb54a2905abc2f77911
 
 function Scancard() {
   const [aadharImageUrl, setAadharImageUrl] = useState(null);
@@ -30,7 +27,6 @@ function Scancard() {
     setPanImageUrl(imageUrl);
   };
 
-<<<<<<< HEAD
   const handleSubmit = async () => {
     try {
       const formData = new FormData();
@@ -64,32 +60,12 @@ function Scancard() {
     }
   };
 
-=======
-  const handleRetake = () => {
-    setAadharImageUrl(null);
-    setPanImageUrl(null);
-  };
-
-  const handleStartCamera = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: true,
-      });
-      videoRef.current.srcObject = stream;
-      setMediaStream(stream);
-    } catch (error) {
-      console.error("Error accessing webcam:", error);
-    }
-  };
-
->>>>>>> 5fd33205559d96c04ac69eb54a2905abc2f77911
   const handleStopCamera = () => {
     if (mediaStream) {
       mediaStream.getTracks().forEach((track) => track.stop());
       setMediaStream(null);
     }
   };
-<<<<<<< HEAD
 
   // Function to convert data URI to Blob
   const dataURItoBlob = (dataURI) => {
@@ -102,8 +78,6 @@ function Scancard() {
     }
     return new Blob([ab], { type: mimeString });
   };
-=======
->>>>>>> 5fd33205559d96c04ac69eb54a2905abc2f77911
 
   return (
     <div className="center-container">
@@ -135,10 +109,7 @@ function Scancard() {
             <button
               className="continue-button"
               disabled={!aadharImageUrl || !panImageUrl}
-<<<<<<< HEAD
               onClick={handleSubmit} // Call handleSubmit when clicking the button
-=======
->>>>>>> 5fd33205559d96c04ac69eb54a2905abc2f77911
             >
               Continue
             </button>
