@@ -5,13 +5,29 @@ import "../css/Scancard.css"; // Import CSS file
 function Scancard() {
   const [aadharImage, setAadharImage] = useState(null);
   const [panImage, setPanImage] = useState(null);
+  const [aadharImageUrl, setAadharImageUrl] = useState(null);
+  const [panImageUrl, setPanImageUrl] = useState(null);
 
   const handleAadharChange = (e) => {
-    setAadharImage(e.target.files[0]);
+    const file = e.target.files[0];
+    setAadharImage(file);
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setAadharImageUrl(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
 
   const handlePanChange = (e) => {
-    setPanImage(e.target.files[0]);
+    const file = e.target.files[0];
+    setPanImage(file);
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setPanImageUrl(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleUpload = () => {
@@ -23,10 +39,8 @@ function Scancard() {
 
   return (
     <div className="center-container">
-      {" "}
       {/* Container to center the component */}
       <div className="scancard-container">
-        {" "}
         {/* Container for the component */}
         <p>Please upload both your Aadhar and Pan card:</p>
         <div>
@@ -37,6 +51,9 @@ function Scancard() {
             accept="image/jpeg, image/png"
             onChange={handleAadharChange}
           />
+          {aadharImageUrl && (
+            <img src={aadharImageUrl} alt="Aadhar Card" width="200" />
+          )}
         </div>
         <div>
           <label htmlFor="pan">Upload Pan Card (JPG/PNG):</label>
@@ -46,6 +63,7 @@ function Scancard() {
             accept="image/jpeg, image/png"
             onChange={handlePanChange}
           />
+          {panImageUrl && <img src={panImageUrl} alt="Pan Card" width="200" />}
         </div>
         <Link to="/end">
           <button
