@@ -18,3 +18,16 @@ Welcome to STACHAR, your one-stop solution for e-KYC (electronic Know Your Custo
 * **Streamlined Process**: With STACHAR, you can complete the KYC process quickly and efficiently. Our short and straightforward process minimizes the time required for customer verification, enabling swift onboarding while maintaining compliance.
 
 ## Screenshots
+* Landing
+  [ Insert Pic Here ]
+* Home Page
+  [ Insert Pic Here ]
+  Showing the feature of changing languages as needed
+* Registration Form
+  [ Insert Pic Here ]
+* Face Scan
+  [ Insert Pic Here ]
+* Card Scan
+  [ Insert Pic Here ]
+* End
+* [ Insert Pic Here ]
