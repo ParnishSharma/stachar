@@ -14,35 +14,31 @@
 }
 
 .form-wrapper form {
-  padding: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.form-row {
+  display: flex;
   align-items: center;
-  background-color: #000080;
-}
-
-.form-wrapper label {
-  padding: 5px;
   margin-bottom: 10px;
-  margin-right: 10px;
-  background-color: #0a4c9c;
-  border-radius: 10px;
 }
 
-.form-wrapper input,
-.form-wrapper select {
+.form-row label {
+  width: 150px; /* Adjust the width of the label */
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
   padding: 8px;
-  /* margin-bottom: 20px; */
-  margin: 5px;
+  margin-left: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  border: none;
-  width: 300px;
   background-color: #2a7ae2;
 }
 
 .form-wrapper button {
-  display: inline-block;
   background-color: #007bff;
   color: #ffffff;
   border: none;
