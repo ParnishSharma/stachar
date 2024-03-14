@@ -158,7 +158,7 @@ const resources = {
 
   return (
     <div style={styles.container}>
-    <select value={selectedLanguage} onChange={handleLanguageChange}><h4>slect language </h4>
+    <h4 style={{marginRight:'0'}}>select language </h4><select value={selectedLanguage} onChange={handleLanguageChange}><h4>slect language </h4>
     <option value="en">English</option>
     <option value="zh">Chinese</option>
     <option value="es">Spanish</option>
@@ -205,9 +205,11 @@ const resources = {
           {t('documentsNeeded.description')}
         </p>
       </motion.div>
-      <Link to="/form">      <button style={styles.button}>
-        Continue <FaArrowRight style={styles.arrowIcon} />
-      </button></Link>  
+      <Link to="/scancard">
+      <button style={{marginTop:'1rem', borderRadius:"12px", fontSize:"22px", padding:"8px"}}>
+        Continue <FaArrowRight/>
+      </button>
+    </Link>
     </div>
   );
 };

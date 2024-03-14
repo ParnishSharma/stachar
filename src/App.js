@@ -17,7 +17,6 @@ function App() {
     <BrowserRouter>
     <Navbar/>
       <Routes>
-          <Route  path="/" element={<Home />} />
           <Route  path="/scan" element={<FaceScanComponent />} />
           <Route  path="/home" element={<Home />} />
           <Route  path="/" element={<Welcomepage />} />
