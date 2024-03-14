@@ -60,6 +60,15 @@ function Navbar() {
                   Profile
                 </Link>
               </li>
+              <li className="nav-item" style={{ marginRight: "15px" }}>
+                <Link
+                  className="nav-link"
+                  to="/scancard"
+                  style={{ color: "white" }}
+                >
+                  UploadDocs
+                </Link>
+              </li>
 
               <li className="nav-item">
                 <Link className="nav-link" to="/" style={{ color: "white" }}>

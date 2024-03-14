@@ -9,7 +9,6 @@ import {
   FaRegIdCard,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "../css/Homepage.css";
 
 const resources = {
   en: {
@@ -187,8 +186,9 @@ const Home = () => {
 
   return (
     <div style={styles.container}>
-      <h4 style={styles.h4}>Select language </h4>
+      <h4 style={{ marginRight: "0" }}>select language </h4>
       <select value={selectedLanguage} onChange={handleLanguageChange}>
+        <h4>slect language </h4>
         <option value="en">English</option>
         <option value="zh">Chinese</option>
         <option value="es">Spanish</option>

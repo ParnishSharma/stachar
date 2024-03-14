@@ -10,14 +10,19 @@ const FaceScanComponent = () => {
   const [photoCaptured, setPhotoCaptured] = useState(false);
   const [displayPhoto, setDisplayPhoto] = useState(false);
   const videoRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
+    let stream = null;
     // Initialize camera stream
     if (videoRef.current) {
       navigator.mediaDevices
         .getUserMedia({ video: true })
-        .then((stream) => {
-          videoRef.current.srcObject = stream;
+        .then((streamObj) => {
+          stream = streamObj;
+          if (videoRef.current) {
+            videoRef.current.srcObject = streamObj;
+          }
         })
         .catch((error) => {
           console.error('Error accessing camera:', error);
@@ -26,13 +31,12 @@ const FaceScanComponent = () => {
 
     // Cleanup function to turn off the camera when component unmounts
     return () => {
-      const stream = videoRef.current.srcObject;
       if (stream) {
-        const tracks = stream.getTracks();
-        tracks.forEach((track) => {
+        stream.getTracks().forEach((track) => {
           track.stop();
         });
       }
+      clearInterval(intervalRef.current);
     };
   }, []);
 
@@ -55,8 +59,7 @@ const FaceScanComponent = () => {
       // Stop the video stream
       const stream = video.srcObject;
       if (stream) {
-        const tracks = stream.getTracks();
-        tracks.forEach((track) => {
+        stream.getTracks().forEach((track) => {
           track.stop();
         });
       }
@@ -85,21 +88,18 @@ const FaceScanComponent = () => {
   };
 
   const uploadPhoto = () => {
-
     console.log('Photo uploaded:', photoData);
-    
   };
 
   useEffect(() => {
-    let countdownTimer;
     if (isAligned && countdown > 0 && !photoCaptured) {
-      countdownTimer = setTimeout(() => {
+      intervalRef.current = setInterval(() => {
         setCountdown((prevCountdown) => prevCountdown - 1);
       }, 1000);
     } else if (isAligned && countdown === 0 && !photoCaptured) {
       capturePhoto();
     }
-    return () => clearTimeout(countdownTimer);
+    return () => clearInterval(intervalRef.current);
   }, [isAligned, countdown, photoCaptured]);
 
   return (
@@ -116,24 +116,26 @@ const FaceScanComponent = () => {
               const detectAlignment = () => {
                 // Sample logic for detecting face alignment
                 const faceAlignmentThreshold = 0.5; // Adjust this threshold as needed
-
                 const isAligned = Math.random() > faceAlignmentThreshold;
-
                 setIsAligned(isAligned);
               };
 
               // Sample interval for detecting alignment
-              setInterval(detectAlignment, 1000); // Adjust interval as needed
+              intervalRef.current = setInterval(detectAlignment, 1000); // Adjust interval as needed
             }}
           ></video>
         ) : (
           <img src={photoData} alt="Captured" className="photo-preview" />
         )}
         {isAligned && !photoCaptured && (
-          <svg className="face-shape" width="200" height="200">
-            {/* Customize the shape here */}
-            <rect width="300" height="200" fill="none" />
-          </svg>
+          <svg className="face-shape" width="200" height="200" style={{ background: "transparent" }}>
+          <rect
+            width="300"
+            height="200"
+            fill="none"  // Set fill to "none" for transparency
+            strokeWidth="2"  // Adjust stroke width as needed
+          />
+        </svg>
         )}
       </div>
       {!photoCaptured && (
@@ -168,9 +170,11 @@ const FaceScanComponent = () => {
           )}
         </div>
       )}
-      <Link to="/scancard">      <button >
-      Continue <FaArrowRight  />
-    </button></Link>  
+      <Link to="/scancard">
+      <button style={{marginTop:'1rem', borderRadius:"12px", fontSize:"22px", padding:"8px"}}>
+        Continue <FaArrowRight/>
+      </button>
+    </Link>
     </div>
   );
 };
