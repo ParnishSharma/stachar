@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #067469;
+  background-color: #095db8;
 }
 
 .form-wrapper {
-  background-color: #0a9c8e;
+  background-color: #000080;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -18,45 +18,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0bc0ae;
+  background-color: #000080;
 }
 
 .form-wrapper label {
   padding: 5px;
   margin-bottom: 10px;
   margin-right: 10px;
-  background-color: #0a9c8e;
+  background-color: #0a4c9c;
   border-radius: 10px;
 }
 
 .form-wrapper input,
 .form-wrapper select {
-  padding: 10px;
+  padding: 8px;
   /* margin-bottom: 20px; */
   margin: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   border: none;
   width: 300px;
-  background-color: #0bc0ae;
+  background-color: #2a7ae2;
 }
-
-/* .form-wrapper button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.form-wrapper button:hover {
-  background-color: #0056b3;
-} */
 
 .form-wrapper button {
   display: inline-block;
-  background-color: #0a9c8e;
+  background-color: #007bff;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -66,5 +53,5 @@
 }
 
 .form-wrapper button:hover {
-  background-color: #066b61;
+  background-color: #0056b3;
 }
