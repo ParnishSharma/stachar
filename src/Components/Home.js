@@ -205,15 +205,12 @@ const resources = {
           {t('documentsNeeded.description')}
         </p>
       </motion.div>
-      <Link to="/scancard">
-      <button style={{marginTop:'1rem', borderRadius:"12px", fontSize:"22px", padding:"8px"}}>
-        Continue <FaArrowRight/>
-      </button>
-    </Link>
+      <Link to="/form">      <button style={styles.button}>
+        Continue <FaArrowRight style={styles.arrowIcon} />
+      </button></Link>  
     </div>
   );
 };
-
 
 const styles = {
   container: {
