@@ -1,74 +1,44 @@
-<<<<<<< HEAD
-Initial commit
-=======
-# Getting Started with Create React App
+# STACHAR - An e-KYC app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+WORKING VIDEO LINK :  [https://drive.google.com/file/d/1tvx79CHDZW_ZyS8fK_4jeUVbXYFzGbRd/view?usp=sharing](https://drive.google.com/drive/folders/11_BUBGsID8O7B3_GZMuh7YgHl9sm92Db?usp=sharing)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Welcome to STACHAR, your one-stop solution for e-KYC (electronic Know Your Customer) needs. STACHAR is a user-friendly application designed to streamline the process of customer verification for businesses and organizations.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Workflow 
 
-### `npm test`
+* The user is greeted at the landing page to start their e-KYC Process.
+* The Home Page informs the user about the KYC process, instructs them on how to complete the steps and also has the accessibility feature of changing the language as per the user's requirement.
+* In the Registration Form page the user can enter their personal details like Name, Phone Number, etc.
+* Then the user is prompted to give access to their device's webcam so that their current photograph may be taken.
+* After that a photograph of the user's Identification Document is taken.
+* That finishes your e-KYC!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Standout Features
 
-### `npm run build`
+* **Intuitive User Interface:** STACHAR boasts a simple and easy-to-use interface, ensuring that users can navigate the application effortlessly without any steep learning curve.
+* **Language Accessibility:** Our app supports multiple languages, allowing users from diverse backgrounds to interact with STACHAR comfortably in their preferred language.
+* **Streamlined Process**: With STACHAR, you can complete the KYC process quickly and efficiently. Our short and straightforward process minimizes the time required for customer verification, enabling swift onboarding while maintaining compliance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
+* Landing
+  ![WhatsApp Image 2024-03-14 at 18 42 01](https://github.com/ParnishSharma/stachar/assets/100596002/d7327689-99f8-4e27-ad7a-5e1332856bde)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Home Page
+ ![WhatsApp Image 2024-03-14 at 18 42 01 (1)](https://github.com/ParnishSharma/stachar/assets/100596002/5ccc84de-612a-436d-a19a-c0d91b14d535)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  Showing the feature of changing languages as needed
+* Registration Form
+![WhatsApp Image 2024-03-14 at 18 42 01 (2)](https://github.com/ParnishSharma/stachar/assets/100596002/837a4e83-4903-4b2c-8c0f-f0e265083fb4)
 
-### `npm run eject`
+* Face Scan
+  ![WhatsApp Image 2024-03-14 at 18 42 02](https://github.com/ParnishSharma/stachar/assets/100596002/74cc918c-a5e9-4d56-a148-2c0261f60dc1)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Card Scan
+ ![WhatsApp Image 2024-03-14 at 18 42 02 (1)](https://github.com/ParnishSharma/stachar/assets/100596002/3402d7d3-fadc-41b5-a6ab-913a5d708581)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* End
+* `    ![WhatsApp Image 2024-03-14 at 18 42 02 (2)](https://github.com/ParnishSharma/stachar/assets/100596002/64119e15-85ab-4dc9-b0a9-caf04b1af66b)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 5542d4bb3dec233764788825746cc26fa07c9b23
