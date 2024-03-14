@@ -5,6 +5,9 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/Auth.js";
 import id from "./routes/Id.js"
 import cors from "cors";
+import multer from 'multer';
+
+import path from 'path';
 
 //configure env
 dotenv.config();
@@ -21,10 +24,52 @@ db.once('open', () => console.log('Connected to MongoDB'));
 //rest object
 const app = express();
 
+
+
+
+
 //middelwares
 app.use(cors());
 import bodyParser from 'body-parser';
 // const app = express();
+
+
+// Set up Multer storage configuration
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'C:/Users/ayush/Downloads/stachar-main/Uploads');
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+// Initialize Multer with the storage configuration
+const upload = multer({ storage: storage });
+
+// Route for file upload
+app.post('/upload', upload.single('image'), (req, res) => {
+  console.log(req.file);
+  try {
+    // If the file was uploaded successfully, respond with a success message
+    res.status(201).send('File uploaded successfully');
+  } catch (error) {
+    // If an error occurred during file upload, respond with an error message
+    console.error('Error uploading file:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
+
+
+
+
+
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,5 +84,5 @@ const port  =  5000;
 
 //run listen
 app.listen(port, () => {
-  console.log(`shivani saree  listening at http://localhost:${port}`)
+  console.log(`STACHAR  listening at http://localhost:${port}`)
 })

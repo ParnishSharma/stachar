@@ -1,0 +1,42 @@
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.scancard-container {
+  text-align: center;
+}
+
+.camera-container {
+  position: relative;
+  margin: 20px auto;
+  width: 300px;
+  height: 300px;
+}
+
+.camera-container video,
+.camera-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons-container {
+  margin-top: 20px;
+}
+
+.buttons-container button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.buttons-container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

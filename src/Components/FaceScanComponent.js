@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import '../css/FaceScanComponent.css'; // Import CSS file for styling
+import React, { useEffect, useRef, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "../css/FaceScanComponent.css"; // Import CSS file for styling
 
 const FaceScanComponent = () => {
   const [isAligned, setIsAligned] = useState(false);
@@ -10,53 +10,58 @@ const FaceScanComponent = () => {
   const [photoCaptured, setPhotoCaptured] = useState(false);
   const [displayPhoto, setDisplayPhoto] = useState(false);
   const videoRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
+    let stream = null;
     // Initialize camera stream
     if (videoRef.current) {
       navigator.mediaDevices
         .getUserMedia({ video: true })
-        .then((stream) => {
-          videoRef.current.srcObject = stream;
+        .then((streamObj) => {
+          stream = streamObj;
+          if (videoRef.current) {
+            videoRef.current.srcObject = streamObj;
+          }
         })
         .catch((error) => {
-          console.error('Error accessing camera:', error);
+          console.error("Error accessing camera:", error);
         });
     }
 
     // Cleanup function to turn off the camera when component unmounts
     return () => {
-      const stream = videoRef.current.srcObject;
       if (stream) {
-        const tracks = stream.getTracks();
-        tracks.forEach((track) => {
+        stream.getTracks().forEach((track) => {
           track.stop();
         });
       }
+      clearInterval(intervalRef.current);
     };
   }, []);
 
   // Function to capture photo when alignment is detected
   const capturePhoto = () => {
     if (!photoCaptured && isAligned) {
-      const canvas = document.createElement('canvas');
+      const canvas = document.createElement("canvas");
       const video = videoRef.current;
 
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
 
-      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas
+        .getContext("2d")
+        .drawImage(video, 0, 0, canvas.width, canvas.height);
 
       // Save the image data
-      setPhotoData(canvas.toDataURL('image/png'));
+      setPhotoData(canvas.toDataURL("image/png"));
       setPhotoCaptured(true);
       setDisplayPhoto(true);
 
       // Stop the video stream
       const stream = video.srcObject;
       if (stream) {
-        const tracks = stream.getTracks();
-        tracks.forEach((track) => {
+        stream.getTracks().forEach((track) => {
           track.stop();
         });
       }
@@ -80,26 +85,23 @@ const FaceScanComponent = () => {
         }
       })
       .catch((error) => {
-        console.error('Error accessing camera:', error);
+        console.error("Error accessing camera:", error);
       });
   };
 
   const uploadPhoto = () => {
-
-    console.log('Photo uploaded:', photoData);
-    
+    console.log("Photo uploaded:", photoData);
   };
 
   useEffect(() => {
-    let countdownTimer;
     if (isAligned && countdown > 0 && !photoCaptured) {
-      countdownTimer = setTimeout(() => {
+      intervalRef.current = setInterval(() => {
         setCountdown((prevCountdown) => prevCountdown - 1);
       }, 1000);
     } else if (isAligned && countdown === 0 && !photoCaptured) {
       capturePhoto();
     }
-    return () => clearTimeout(countdownTimer);
+    return () => clearInterval(intervalRef.current);
   }, [isAligned, countdown, photoCaptured]);
 
   return (
@@ -116,23 +118,30 @@ const FaceScanComponent = () => {
               const detectAlignment = () => {
                 // Sample logic for detecting face alignment
                 const faceAlignmentThreshold = 0.5; // Adjust this threshold as needed
-
                 const isAligned = Math.random() > faceAlignmentThreshold;
-
                 setIsAligned(isAligned);
               };
 
               // Sample interval for detecting alignment
-              setInterval(detectAlignment, 1000); // Adjust interval as needed
+              intervalRef.current = setInterval(detectAlignment, 1000); // Adjust interval as needed
             }}
           ></video>
         ) : (
           <img src={photoData} alt="Captured" className="photo-preview" />
         )}
         {isAligned && !photoCaptured && (
-          <svg className="face-shape" width="200" height="200">
-            {/* Customize the shape here */}
-            <rect width="300" height="200" fill="none" />
+          <svg
+            className="face-shape"
+            width="200"
+            height="200"
+            style={{ background: "transparent" }}
+          >
+            <rect
+              width="300"
+              height="200"
+              fill="none" // Set fill to "none" for transparency
+              strokeWidth="2" // Adjust stroke width as needed
+            />
           </svg>
         )}
       </div>
@@ -141,8 +150,8 @@ const FaceScanComponent = () => {
           {isAligned
             ? countdown > 0
               ? `Face aligned. Taking photo in ${countdown}...`
-              : 'Capturing photo...'
-            : 'Please align your face within the shape.'}
+              : "Capturing photo..."
+            : "Please align your face within the shape."}
         </p>
       )}
       {photoData && (
@@ -167,10 +176,27 @@ const FaceScanComponent = () => {
             </div>
           )}
         </div>
-      )}
-      <Link to="/scancard">      <button >
-      Continue <FaArrowRight  />
-    </button></Link>  
+      )}{" "}
+      <Link to="/scancard">
+        <button
+          style={{
+            // marginTop: "1rem",
+            // borderRadius: "12px",
+            // fontSize: "22px",
+            // padding: "8px",
+            display: "inline-block",
+            backgroundColor: "#007bff",
+            color: "#ffffff",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+          }}
+        >
+          Continue
+        </button>
+      </Link>
     </div>
   );
 };
