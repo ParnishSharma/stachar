@@ -20,7 +20,7 @@ function Navbar() {
                 <Link className="nav-link" to="/scan" style={{ color: "white" }}>Scan</Link>
               </li>
               <li className="nav-item" style={{ marginRight: "15px" }}> 
-              <Link className="nav-link" to="/collab" style={{ color: "white" }}>Profile</Link>
+              <Link className="nav-link" to="/scancard" style={{ color: "white" }}>UploadDocs</Link>
             </li>
 
               <li className="nav-item" >
