@@ -1,79 +1,90 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../css/Scancard.css"; // Import CSS file
 
 function Scancard() {
-  const [aadharImage, setAadharImage] = useState(null);
-  const [panImage, setPanImage] = useState(null);
   const [aadharImageUrl, setAadharImageUrl] = useState(null);
   const [panImageUrl, setPanImageUrl] = useState(null);
+  const videoRef = useRef();
+  const [mediaStream, setMediaStream] = useState(null);
 
-  const handleAadharChange = (e) => {
-    const file = e.target.files[0];
-    setAadharImage(file);
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      setAadharImageUrl(reader.result);
-    };
-    reader.readAsDataURL(file);
+  const handleAadharCapture = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+    canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
+    const imageUrl = canvas.toDataURL("image/png");
+    setAadharImageUrl(imageUrl);
   };
 
-  const handlePanChange = (e) => {
-    const file = e.target.files[0];
-    setPanImage(file);
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      setPanImageUrl(reader.result);
-    };
-    reader.readAsDataURL(file);
+  const handlePanCapture = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+    canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
+    const imageUrl = canvas.toDataURL("image/png");
+    setPanImageUrl(imageUrl);
   };
 
-  const handleUpload = () => {
-    // Handle file upload logic here
-    // For example, you can send the files to a server using fetch or Axios
-    console.log("Aadhar Image:", aadharImage);
-    console.log("Pan Image:", panImage);
+  const handleRetake = () => {
+    setAadharImageUrl(null);
+    setPanImageUrl(null);
+  };
+
+  const handleStartCamera = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
+      videoRef.current.srcObject = stream;
+      setMediaStream(stream);
+    } catch (error) {
+      console.error("Error accessing webcam:", error);
+    }
+  };
+
+  const handleStopCamera = () => {
+    if (mediaStream) {
+      mediaStream.getTracks().forEach((track) => track.stop());
+      setMediaStream(null);
+    }
   };
 
   return (
     <div className="center-container">
-      {/* Container to center the component */}
       <div className="scancard-container">
-        {/* Container for the component */}
-        <p>Please upload both your Aadhar and Pan card:</p>
-        <div>
-          <label htmlFor="aadhar">Upload Aadhar Card (JPG/PNG):</label>
-          <input
-            type="file"
-            id="aadhar"
-            accept="image/jpeg, image/png"
-            onChange={handleAadharChange}
-          />
+        <h1>Upload Aadhar and Pan Card</h1>
+        <div className="camera-container">
+          <video ref={videoRef} autoPlay />
           {aadharImageUrl && (
             <img src={aadharImageUrl} alt="Aadhar Card" width="200" />
           )}
-        </div>
-        <div>
-          <label htmlFor="pan">Upload Pan Card (JPG/PNG):</label>
-          <input
-            type="file"
-            id="pan"
-            accept="image/jpeg, image/png"
-            onChange={handlePanChange}
-          />
           {panImageUrl && <img src={panImageUrl} alt="Pan Card" width="200" />}
         </div>
-        <Link to="/end">
-          <button
-            className="continue-button"
-            onClick={handleUpload}
-            disabled={!aadharImage || !panImage}
-          >
-            Continue
-          </button>
-        </Link>
+        <div className="buttons-container">
+          {!aadharImageUrl && (
+            <button onClick={handleAadharCapture}>Capture Aadhar</button>
+          )}
+          {!panImageUrl && (
+            <button onClick={handlePanCapture}>Capture Pan</button>
+          )}
+          {(aadharImageUrl || panImageUrl) && (
+            <button onClick={handleRetake}>Retake</button>
+          )}
+          {mediaStream ? (
+            <button onClick={handleStopCamera}>Stop Camera</button>
+          ) : (
+            <button onClick={handleStartCamera}>Start Camera</button>
+          )}
+          <Link to="/end">
+            <button
+              className="continue-button"
+              disabled={!aadharImageUrl || !panImageUrl}
+            >
+              Continue
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

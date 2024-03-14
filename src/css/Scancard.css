@@ -3,67 +3,40 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #095db8;
 }
 
 .scancard-container {
-  width: 400px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #000080;
-}
-
-.scancard-container p {
-  margin-bottom: 10px;
-  text-align: center;
-  background-color: #007bff;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.scancard-container div {
-  margin-bottom: 10px;
   text-align: center;
 }
 
-.scancard-container div.upload {
-  background-color: #007bff; /* Match the background color of the div */
-  border-radius: 5px;
-  padding: 10px;
+.camera-container {
+  position: relative;
+  margin: 20px auto;
+  width: 300px;
+  height: 300px;
 }
 
-.scancard-container div.upload:hover {
-  background-color: #0056b3;
+.camera-container video,
+.camera-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.scancard-container div input[type="file"] {
-  background-color: #007bff; /* Match the background color of the div */
-  color: #ffffff;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline-block;
-  margin-bottom: 10px;
+.buttons-container {
+  margin-top: 20px;
 }
 
-.continue-button {
-  display: block;
-  margin: 0 auto;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
+.buttons-container button {
+  margin: 0 5px;
   padding: 10px 20px;
-  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.continue-button:disabled {
-  background-color: #ccc;
+.buttons-container button:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
-}
-
-.continue-button:hover:enabled {
-  background-color: #0056b3;
 }
