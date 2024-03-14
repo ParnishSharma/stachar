@@ -10,7 +10,8 @@ function WelcomePage() {
       <p>Explore our website to discover more!</p>
 <Link to="/home">      <button style={styles.button}>
         Continue <FaArrowRight style={styles.arrowIcon} />
-      </button></Link>    </div>
+      </button></Link>  
+        </div>
   );
 }
 
