@@ -1,48 +1,29 @@
-import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import { ChillingDoodle } from 'react-open-doodles';
-import { Link } from 'react-router-dom';
+// WelcomePage.js
+
+import React from "react";
+import { ChillingDoodle } from "react-open-doodles";
+import { Link } from "react-router-dom";
+import "../css/WelcomePage.css"; // Import CSS file
+
 function WelcomePage() {
   return (
-    <div style={styles.container}>
-      <h1>Welcome to Our Website</h1>
-      <ChillingDoodle height={150} width={150} primaryColor="#FFB6C1" secondaryColor="#87CEEB" />
-      <p>Explore our website to discover more!</p>
-<Link to="/home">      <button style={styles.button}>
-        Continue <FaArrowRight style={styles.arrowIcon} />
-      </button></Link>    </div>
+    <div className="container">
+      {" "}
+      {/* Updated className */}
+      <h1>Welcome to our e-KYC Service</h1>
+      <ChillingDoodle
+        height={150}
+        width={150}
+        primaryColor="#FFB6C1"
+        secondaryColor="#87CEEB"
+      />
+      <p>Click the button below to know more</p>
+      <Link to="/home">
+        {" "}
+        <button className="button">Continue</button> {/* Updated className */}
+      </Link>{" "}
+    </div>
   );
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '20px',
-    height:'35rem'
-  },
-  button: {
-    backgroundColor: '#007BFF',
-    color: '#fff',
-    padding: '10px 20px',
-    borderRadius: '5px',
-    border: 'none',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '20px',
-    fontWeight: 'bold',
-    transition: 'background-color 0.3s',
-  },
-  buttonHover: {
-    backgroundColor: '#0056b3',
-  },
-  arrowIcon: {
-    marginLeft: '5px',
-  },
-};
 
 export default WelcomePage;
