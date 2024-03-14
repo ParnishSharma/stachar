@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import '../css/FaceScanComponent.css'; // Import CSS file for styling
+import React, { useEffect, useRef, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "../css/FaceScanComponent.css"; // Import CSS file for styling
 
 const FaceScanComponent = () => {
   const [isAligned, setIsAligned] = useState(false);
@@ -25,7 +25,7 @@ const FaceScanComponent = () => {
           }
         })
         .catch((error) => {
-          console.error('Error accessing camera:', error);
+          console.error("Error accessing camera:", error);
         });
     }
 
@@ -43,16 +43,18 @@ const FaceScanComponent = () => {
   // Function to capture photo when alignment is detected
   const capturePhoto = () => {
     if (!photoCaptured && isAligned) {
-      const canvas = document.createElement('canvas');
+      const canvas = document.createElement("canvas");
       const video = videoRef.current;
 
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
 
-      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas
+        .getContext("2d")
+        .drawImage(video, 0, 0, canvas.width, canvas.height);
 
       // Save the image data
-      setPhotoData(canvas.toDataURL('image/png'));
+      setPhotoData(canvas.toDataURL("image/png"));
       setPhotoCaptured(true);
       setDisplayPhoto(true);
 
@@ -83,12 +85,12 @@ const FaceScanComponent = () => {
         }
       })
       .catch((error) => {
-        console.error('Error accessing camera:', error);
+        console.error("Error accessing camera:", error);
       });
   };
 
   const uploadPhoto = () => {
-    console.log('Photo uploaded:', photoData);
+    console.log("Photo uploaded:", photoData);
   };
 
   useEffect(() => {
@@ -128,14 +130,19 @@ const FaceScanComponent = () => {
           <img src={photoData} alt="Captured" className="photo-preview" />
         )}
         {isAligned && !photoCaptured && (
-          <svg className="face-shape" width="200" height="200" style={{ background: "transparent" }}>
-          <rect
-            width="300"
+          <svg
+            className="face-shape"
+            width="200"
             height="200"
-            fill="none"  // Set fill to "none" for transparency
-            strokeWidth="2"  // Adjust stroke width as needed
-          />
-        </svg>
+            style={{ background: "transparent" }}
+          >
+            <rect
+              width="300"
+              height="200"
+              fill="none" // Set fill to "none" for transparency
+              strokeWidth="2" // Adjust stroke width as needed
+            />
+          </svg>
         )}
       </div>
       {!photoCaptured && (
@@ -143,8 +150,8 @@ const FaceScanComponent = () => {
           {isAligned
             ? countdown > 0
               ? `Face aligned. Taking photo in ${countdown}...`
-              : 'Capturing photo...'
-            : 'Please align your face within the shape.'}
+              : "Capturing photo..."
+            : "Please align your face within the shape."}
         </p>
       )}
       {photoData && (
@@ -169,12 +176,27 @@ const FaceScanComponent = () => {
             </div>
           )}
         </div>
-      )}
+      )}{" "}
       <Link to="/scancard">
-      <button style={{marginTop:'1rem', borderRadius:"12px", fontSize:"22px", padding:"8px"}}>
-        Continue <FaArrowRight/>
-      </button>
-    </Link>
+        <button
+          style={{
+            // marginTop: "1rem",
+            // borderRadius: "12px",
+            // fontSize: "22px",
+            // padding: "8px",
+            display: "inline-block",
+            backgroundColor: "#007bff",
+            color: "#ffffff",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+          }}
+        >
+          Continue
+        </button>
+      </Link>
     </div>
   );
 };

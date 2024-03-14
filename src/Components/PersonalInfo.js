@@ -96,9 +96,7 @@ function PersonalInfo() {
             </select>
           </label>
           <Link to="/scan">
-            <button type="submit">
-              Continue <FaArrowRight />
-            </button>
+            <button type="submit">Continue</button>
           </Link>
         </form>
       </div>
