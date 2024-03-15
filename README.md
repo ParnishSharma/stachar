@@ -1,9 +1,9 @@
 # STACHAR - An e-KYC app
 
 
-WORKING VIDEO LINK :  [https://drive.google.com/file/d/1tvx79CHDZW_ZyS8fK_4jeUVbXYFzGbRd/view?usp=sharing](https://drive.google.com/drive/folders/11_BUBGsID8O7B3_GZMuh7YgHl9sm92Db?usp=sharing)
+*Working Video Link* :  [https://drive.google.com/file/d/1tvx79CHDZW_ZyS8fK_4jeUVbXYFzGbRd/view?usp=sharing](https://drive.google.com/drive/folders/11_BUBGsID8O7B3_GZMuh7YgHl9sm92Db?usp=sharing)
 
-
+*The demo_videos.zip file in the repository also has the demo videos available*
 
 Welcome to STACHAR, your one-stop solution for e-KYC (electronic Know Your Customer) needs. STACHAR is a user-friendly application designed to streamline the process of customer verification for businesses and organizations.
 
